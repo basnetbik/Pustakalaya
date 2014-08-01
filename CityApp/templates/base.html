@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>{% block title %}pustakalaya{% endblock %}</title>
+
+    {% load static from staticfiles %}
+    <!--<script src="{%static "tabcontent.js"%}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link rel="stylesheet" href="{% static "layout.css" %}">
+    <link href="{% static "template3/tabcontent.css"%}" rel="stylesheet" type="text/css" />-->
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="header">
+            <div id="title">
+                <h1>DISASTER VISUALIZATION</h1>
+            </div>
+        </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div class="push"></div>
+
+    </div>
+    <br>
+    <br>
+
+    <div class="footer">
+
+    </div>
+
+</body>
+
+</html>

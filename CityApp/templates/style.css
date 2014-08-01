@@ -1,0 +1,65 @@
+body {
+    font-family:Arial,Helvetica,sans-serif;
+    font-size: 14px;
+	margin: 0 auto;
+}
+
+th
+{
+	width:150px;
+	font-size: 13px;
+	height:40px;
+}
+
+#content {
+	width: 1200px;
+	margin: 0 auto;
+	padding: 1px 0 4px;
+	font: 0.85em arial;
+
+}
+
+.header {
+	height: 50px;
+	text-align: center;
+	background-color: #f57e1e;
+}
+
+.footer {
+    padding-top: 10px;
+	background-color: #f57e1e;
+    height: 100px;
+}
+
+#title {
+	text-align: center;
+	color: white;
+}
+
+
+div.left {
+	margin-top:50px;
+	float:left;
+	display: block;
+}
+
+.right {
+	float:right;
+}
+.left {
+    float:left;
+}
+
+.error {
+	color: red;
+}
+
+.success {
+    color: #adff2f;
+}
+
+td
+{
+height:30px;
+vertical-align:top;
+}

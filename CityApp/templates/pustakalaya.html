@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      {% load static from staticfiles %}
+    <meta charset="utf-8">
+    <title>~Pustakaalaya~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{% static "assets/css/bootstrap.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/bootstrap-responsive.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/docs.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/_customized.css"%}" rel="stylesheet">
+
+    <link href="{% static "assets/js/google-code-prettify/prettify.css"%}" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "assets/ico/apple-touch-icon-144-precomposed.png"%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "assets/ico/apple-touch-icon-114-precomposed.png"%}">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "assets/ico/apple-touch-icon-72-precomposed.png"%}">
+                    <link rel="apple-touch-icon-precomposed" href="{% static "assets/ico/apple-touch-icon-57-precomposed.png"%}">
+                                   <link rel="shortcut icon" href="{% static "assets/ico/favicon.png"%}">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    =================================================100%= -->
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #39cccc; background-image: none;" >
+      <div class="navbar-inner" >
+        <div class="container">
+        <div class="row">
+          <div class="span3" id="my_awesome_search" ><h4 style="color: #fff; padding-left:15px ">Pustakaalaya~</h4></div>
+           <div class="span8">
+             <form class="navbar-search pull-right" style="width: 100%;">
+               <input type="text" class="search-query" placeholder="Search     "
+                      style="
+                        border-radius: 5px;
+                        width: 96%;
+                        text-align: right;
+                        border-color: #ccc;  
+                      ">
+             </form>
+           </div> 
+        </div>
+      </div>
+      </div>
+    </div>
+
+  <!-- Subhead
+  ================================================== -->
+  <!-- <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>Components</h1>
+      <p class="lead">Dozens of reusable components built to provide navigation, alerts, popovers, and more.</p>
+    </div>
+  </header>
+
+   -->
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li><a href="#"><i class="icon-chevron-right"></i> Recommended for me</a></li>
+          <li><a href="#"><i class="icon-chevron-right"></i> Issued to me</a></li>
+          <li><a href="#"><i class="icon-chevron-right"></i> My Wishlist</a></li>
+          <li><a href="#"><i class="icon-chevron-right"></i> Requested to me</a></li>
+          <li><a href="#"><i class="icon-chevron-right"></i> Search Books</a></li>
+        </ul>
+        <div class="well well-large" style=" margin-top: 50px; width: 210px;">
+          <p>notifications:</p>
+          <div class="well well-small"> this is the first notification</div>
+          <div class="well well-small"> or maybe this</div>
+          <div class="well well-small">bikram, return my kindle</div>
+          <div class="well well-small">pravesh, where's my car?</div>
+        </div>
+      </div>
+
+      <div class="span9" style="padding-top: 25px">
+        <div class="tabbable tabs-below">
+         <ul class="nav nav-tabs">
+         <li><a href="#">category filters</a></li>
+         <li><a href="#">some link</a></li>
+         <li><a href="#">some link</a></li>
+         <li><a href="#">some link</a></li>
+           <li class="dropdown">
+             <a class="dropdown-toggle"
+                data-toggle="dropdown"
+                href="#">
+                 Dropdown
+                 <b class="caret"></b>
+               </a>
+             <ul class="dropdown-menu">
+               <!-- links -->
+               <li><a href="#">some link</a></li>
+               <li><a href="#">some link</a></li>
+               <li><a href="#">some link</a></li>
+               <li><a href="#">some link</a></li>
+
+             </ul>
+           </li>
+
+         </ul>
+        </div>
+       <div style="margin-top: 3px;">
+        <ul class="thumbnails">
+          <li class="span2">
+            <div class="thumbnail">
+              <img src="http://placekitten.com/g/275/345" alt="">
+
+              <h3>Thumbnail label</h3>
+              <div class="btn-group" style="margin: auto; align="center"; ">
+                <button class="btn">Left</button>
+                <button class="btn">Right</button>
+              </div>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img src="http://placekitten.com/g/275/345" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img src="http://placekitten.com/g/275/345" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img src="http://placekitten.com/g/275/345" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+        </ul> 
+        <ul class="thumbnails">
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="thumbnails">
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+          <li class="span2">
+            <div class="thumbnail">
+              <img data-src="holder.js/275x200" alt="">
+              <h3>Thumbnail label</h3>
+              <p>Thumbnail caption...</p>
+            </div>
+          </li>
+        </ul>
+       </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+    <!-- footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>coded with passion by budho, sushil and laure,</p>
+        <p>designed with love by @nabn_ and bootstrap</p>
+        <ul class="nav nav-list">
+          <li class="divider"></li>
+        </ul>
+        <p>terms and conditions:</p>
+        <p>What are these again?</p>
+        <p>Seriously, use open source, dude and dudettes!</p>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="{%static "http://platform.twitter.com/widgets.js"%}"></script>
+    <script src= "{%static "assets/js/jquery.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-transition.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-alert.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-modal.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-dropdown.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-scrollspy.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-tab.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-tooltip.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-popover.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-button.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-collapse.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-carousel.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-typeahead.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-affix.js"%}"></script>
+
+    <script src= "{%static "assets/js/holder/holder.js"%}"></script>
+    <script src= "{%static "assets/js/google-code-prettify/prettify.js"%}"></script>
+
+    <script src= "{%static "assets/js/application.js"%}"></script>
+
+
+
+  </body>
+</html>

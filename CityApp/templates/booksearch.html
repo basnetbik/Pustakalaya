@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form method="POST" action='/booksearch/'>
+    {% csrf_token %}
+    <pre>
+        Book Title: <input type="input" name="bookname"> </input>
+        <input type="submit"/>
+    </pre>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html><head>
+
+	<title>Pustakalaya~</title>
+   {% load static from staticfiles %}
+
+	<link rel="stylesheet" href="{%static "index_files/spinners.css"%}">
+  
+	
+  <script src="{%static "index_files/jquery.js"%}"></script>
+	<script type="text/javascript" src="{%static "index_files/spinners.js"%}" charset="utf-8"></script>
+
+  <style type="text/css">
+    .searchBar{
+      width:60%px;
+      height: 50px
+      font-size: 30px;
+      font-family: sans-serif;
+      width: 250px;
+      height: 20px;
+      margin-top: 25px;
+      border-radius: 5px;
+      opacity: .3;
+      padding: 5px;
+    }
+    .searchBar:hover{
+      width:60%;
+      height: 50px
+      font-size: 30px;
+      font-family: sans-serif;
+      width: 250px;
+      height: 20px;
+      margin-top: 25px;
+      border-radius: 5px;
+      opacity: .5;
+      padding: 5px;
+    }
+    .source{
+      opacity: .8;
+      float: right;
+      margin-right: 100px;
+    }
+    .source:hover{
+      opacity:1.0;
+    }
+    a:hover{
+      color: white;
+    }
+    .login{
+      font-style: sans-serif;
+      font-size: 20px;
+    }
+    .moreVisible{
+      color: black;
+    }
+    .loginSubmit{
+      margin-top: 30px;
+      padding:10px;
+      border :4px;
+      border-radius: 5px;
+      background-color: #d3d3d3;
+
+    }
+  </style>
+
+</head>
+
+<body class="active6" style="background-color:#26a25a;">
+
+<a class="source" href="#" >Login<span class="underline"></span></a>
+
+<div class="" id="source-frame">
+  <ul class="source-list">
+
+    <!-- 1. Rotating Plane -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem1</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish1</textarea>
+    </li>
+
+    <!-- 2. Double Bounce -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem2</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish2</textarea>
+    </li>
+
+    <!-- 3. Rectangle Wave -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem3</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish3</textarea>
+    </li>
+
+    <!-- 4. Wandering Cubes -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem4</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish4</textarea>
+    </li>
+
+    <!-- 5. Pulse -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem5</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish5</textarea>
+    </li>
+
+    <!-- 6. Chasing Dots -->
+    <li class="visible">
+      <textarea readonly="readonly" class="html-code">Lorem6</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish6</textarea>
+    </li>
+
+    <!-- 7. Three Bounce -->
+    <li>
+      <textarea readonly="readonly" class="html-code">Lorem7</textarea>
+      <textarea readonly="readonly" class="css-code">Gibberish7</textarea>
+    </li>
+
+    <!-- 8. Circle -->
+    <li style="background-color:white;color:black;opacity:.9;" class="login">
+      <div class="logincontent">
+        <form  method="POST" action="/login/">
+            {% csrf_token %}
+            <input type="input" name= "uname" placeholder="UserName" class="searchBar moreVisible"><br>
+            <input type="password" name = "password" placeholder="Password" class="searchBar"><br>
+            <input type="submit" value="Login" class="loginSubmit"/>
+        </form>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+
+<div id="preview-area">
+  <ul id="spinners">  
+  <!-- li help center the preview-area -->
+    <li class=""><div class="rotating-plane"></div></li>
+    <li>
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </li>
+    <li class="rectangle-bounce">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </li>
+    
+    <li class="chasing-dots selected">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </li>
+    <li class="three-bounce" style="opacity:100;visibility:visible;font-size:50px;font-family:'Ubuntu Light', 'Helvetica Neue';">
+      <span class="talio">pustakalaya~<br>
+        <form class="foramos" style="float:left;" method="GET" action="/booksearch/">
+          <input type="text" class="searchBar" name="search_query" placeholder="Search"/>
+        </form>
+      </span>
+    </li>
+    <li class="circle-spinner">
+      <div class="spinner-container container1">
+      </div>
+      <div class="spinner-container container2">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="spinner-container container3">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+    </li>
+  </ul>
+  
+</div>
+
+
+
+<footer>
+  <a href="#" class="profile-link">by Team <strong>Halogen</strong><span class="underline"></span></a>
+  <a href="#" class="view-on-github">Help<span class="underline"></span></a>
+</footer>
+  
+</body></html>

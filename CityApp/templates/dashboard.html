@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>~Pustakaalaya~</title>
+       {% load static from staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{% static "assets/css/bootstrap.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/bootstrap-responsive.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/docs.css"%}" rel="stylesheet">
+    <link href="{% static "assets/css/_customized.css"%}" rel="stylesheet">
+
+    <link href="{% static "assets/js/google-code-prettify/prettify.css"%}" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "assets/ico/apple-touch-icon-144-precomposed.png"%}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "assets/ico/apple-touch-icon-114-precomposed.png"%}">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "assets/ico/apple-touch-icon-72-precomposed.png"%}">
+                    <link rel="apple-touch-icon-precomposed" href="{% static "assets/ico/apple-touch-icon-57-precomposed.png"%}">
+                                   <link rel="shortcut icon" href="{% static "assets/ico/favicon.png"%}">
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    =================================================100%= -->
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #39cccc; background-image: none;" >
+      <div class="navbar-inner" >
+        <div class="container">
+        <div class="row">
+          <div class="span3" id="my_awesome_search" ><h4 style="color: #fff; padding-left:15px;font-family: 'Ubuntu Light' ">pustakaalaya~</h4></div>
+           <div class="span8">
+             <form class="navbar-search pull-right" style="width: 100%;" method="GET" action="/booksearch/">
+
+               <input type="text" class="search-query" placeholder="Search     "
+                      style="
+                        border-radius: 5px;
+                        width: 96%;
+                        text-align: right;
+                        border-color: #ccc;  
+                      "
+                       name = "search_query">
+
+             </form>
+           </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    {% if user %}
+        <div style="float:right;padding-right: 30px;text-align: right;color: green;">Welcome {{user.username}} <br>
+
+            <a href="/logout/">logout</a>
+        </div>
+    {% endif %}
+
+  <!-- Subhead
+  ================================================== -->
+  <!-- <header class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>Components</h1>
+      <p class="lead">Dozens of reusable components built to provide navigation, alerts, popovers, and more.</p>
+    </div>
+  </header>
+
+   -->
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+            {% if user %}
+          <li><a href="/?recommended"><i class="icon-chevron-right"></i>Recommended for me</a></li>
+          <li><a href="/?borrowed"><i class="icon-chevron-right"></i>Issued to me</a></li>
+          <li><a href="/?wishlist"><i class="icon-chevron-right"></i>My Wishlist</a></li>
+          <li><a href="/?contributed"><i class="icon-chevron-right"></i>Contributed</a></li>
+
+          <li><a href="/?allbooks"><i class="icon-chevron-right"></i>All Books</a></li>
+            {% else %}
+            <li><a href="/booksearch/?search_query="><i class="icon-chevron-right"></i>All Books</a></li>
+            {% endif %}
+        </ul>
+         {% if user %}
+        <div class="well well-large" style=" margin-top: 50px; width: 210px;">
+          <p>Notifications:</p>
+          <div class="well well-small">The book "Animal Farm" is available for you</div>
+           <div class="well well-small">The book "Essentials of C" is available for you</div>
+           <div class="well well-small">The book "1980" is approaching its due date</div>
+          <div class="well well-small">Do you have "Intermediatory Finance Studies"?</div>
+        </div>
+          {% endif %}
+      </div>
+
+      <div class="span9" style="padding-top: 25px">
+
+      <!-- Le Afterwards... -->
+      <!-- replaced defunct tabs with pagination -->
+
+      {% if show_pagination %}
+      <div class="pagination">
+        <ul>
+          <li><a href="#"><i class="icon-chevron-left"></i></a></li>
+          <li><a href="{{ path }}?{{ action }}&Politics">Politics</a></li>
+          <li><a href="{{ path }}?{{ action }}&Arts">Arts</a></li>
+          <li><a href="{{ path }}?{{ action }}&Management">Management</a></li>
+          <li><a href="{{ path }}?{{ action }}&Computer">Computer</a></li>
+          <li><a href="{{ path }}?{{ action }}&Science">Science</a></li>
+          <li><a href="{{ path }}?{{ action }}&Technology">Technology</a></li>
+          <li><a href="{{ path }}?{{ action }}&Engineering">Engineering</a></li>
+          <li><a href="{{ path }}?{{ action }}&Math">math</a></li>
+          <li><a href="{{ path }}?{{ action }}&Design">design</a></li>
+          <!-- <li><a href="{{ path }}?{{ action }}&Career">career</a></li> -->
+          <li><a href="#"><i class="icon-chevron-right"></i></a></li>
+        </ul>
+      </div>
+      {% endif %}
+
+       <div style="margin-top: 3px;">
+        {% for i in booklist %}
+        <ul class="thumbnails" style="padding-left: 15px;">
+          {% for books in i %}
+            <li class="span2">
+            <div class="thumbnail" align="center">
+              <img src="http://localhost/books/{{ books.name }}.jpg" alt="">
+
+              <p style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size: 16px">{{books.name}}</p>
+              <div class="btn-group" style="margin: auto; align='center'; ">
+                {% if books.lend.username != user.username and user not in books.waiting_list.all and user != books.borrow%}
+                <form method='POST' action='/add_to_wishlist/' >
+                {% csrf_token %}
+                    <input type='hidden' name='book' value='{{ books.id }}'/>
+                    <input type='submit' value='Add to wishlist' class="btn btn-primary btn-success">
+                </form>
+                {% else %}
+                    <div class="btn btn-disabled" disabled><i class="icon-check"></i> Added</div>
+                    
+                {% endif %}
+              </div>
+            </div>
+          </li>
+              {% endfor %}
+
+        </ul>
+        {% endfor %}
+       </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+    <!-- footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p>Coded with passion by Pravesh, Sushil and Bikram,</p>
+        <p>Designed with love by Navin and Bootstrap</p>
+
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script type="text/javascript" src="{%static "http://platform.twitter.com/widgets.js"%}"></script>
+    <script src= "{%static "assets/js/jquery.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-transition.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-alert.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-modal.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-dropdown.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-scrollspy.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-tab.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-tooltip.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-popover.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-button.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-collapse.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-carousel.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-typeahead.js"%}"></script>
+    <script src= "{%static "assets/js/bootstrap-affix.js"%}"></script>
+
+    <script src= "{%static "assets/js/holder/holder.js"%}"></script>
+    <script src= "{%static "assets/js/google-code-prettify/prettify.js"%}"></script>
+
+    <script src= "{%static "assets/js/application.js"%}"></script>
+
+
+
+  </body>
+</html>

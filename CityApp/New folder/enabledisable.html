@@ -1,0 +1,16 @@
+<form>
+	<input type="text"> test
+	<input type="text" id="tt"> watch me
+	<select onchange="trigger()">
+		<option>enable</option>
+		<option>disable</option>
+	</select>
+</form>
+
+<script>
+flag=true;
+function trigger(){
+document.getElementById('tt').disable=flag;
+flag = !flag;
+}
+</script>

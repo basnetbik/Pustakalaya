@@ -1,0 +1,97 @@
+<html>
+<head>
+	<style type="text/css">
+	@media all and (min-width:600px){
+	    body{background:url("img/smallbg.jpg")}
+	}
+	@media all and (max-width:599px){
+	    body{background:#fff}
+	}
+	body{
+		height: 97%;
+		width: 95%;
+		/*background-image: url("img/smallbg.jpg");*/
+		background-repeat:no-repeat;
+		background-position: right bottom;
+		font-family: 'Helvetica';
+		min-width: 600px;
+		
+	}
+	a{
+		color: #d3d3d3;
+	}
+	a:hover{
+		color: orange;
+	}
+	.container{
+		margin: auto;
+		/*margin-top: 100px;*/
+		height: 100;
+		width: 600;
+		text-align: center;
+	}
+	.marginnotworking{
+		height:150px;
+		width:100%;
+	}
+	.brand{
+		font-size: 20px;
+		text-align: center;
+	}
+	.logo{
+		height: 100px;
+		width: 100%;
+		margin: auto;
+		background-image: url("img/logo.jpg");
+	}
+	.slogan{
+		float: right;
+	}
+	.searchcontainer{
+		margin-top: 20px;
+	}
+	.search{
+		border-radius: 500px 0px 0px 500px;
+		border: none;
+		height : 50px;
+		width : 80%;
+		background: #ededed;
+		font-size: 20px;
+		padding:15px;
+	}
+	input:focus{
+		border-radius: 500px 0px 0px 500px;
+	}
+	.searchbutton{
+		border-radius: 0px 500px 500px 0px;
+		border: none;
+		height: 50px;
+		width: 15%;
+		font-size: 15px;
+		background: #ededed;
+	}
+	</style>
+</head>
+	<body>
+		<div style="float:right;">
+			<a href="signup.html" style="margin-right:10px">Signup</a>
+			<a href="signin.html" style="margin-right:10px">Login</a>
+		</div>
+		<div class="container">
+			<div class="marginnotworking"></div>
+			<div class="brand">
+
+				<div class="logo"></div>
+				<div class="slogan">This is our slogan.</div>
+				<br><br>		<!-- float right hurts -->
+				<div class="searchcontainer">
+					<form>
+						<input type="text" class="search" placeholder="Search For Books">
+						<input type="submit" value="Search" class="searchbutton">
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
